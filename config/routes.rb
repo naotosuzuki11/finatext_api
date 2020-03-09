@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  scope 'v1' do
+    resources :comments, only: [:index, :show]
+  end
+
+  scope 'v2' do
+    get 'comments/:id', to: 'comments#show_two'
+  end
+
+  get '/', to: 'comments#home'
+
 end
