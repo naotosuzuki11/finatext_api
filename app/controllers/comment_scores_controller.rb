@@ -1,0 +1,3 @@
+class CommentScoresController < ApplicationController
+
+end
